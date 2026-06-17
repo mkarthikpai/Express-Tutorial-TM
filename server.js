@@ -1,8 +1,9 @@
-const express = require("express");
-const path = require("path");
-const app = express();
-const posts = require("./routes/posts");
+import express from "express";
+import path from "path";
+import posts from "./routes/posts.js";
 const port = process.env.PORT || 8000;
+
+const app = express();
 
 // Setup static folder middleware
 // app.use(express.static(path.join(__dirname, "public")));
