@@ -5,6 +5,10 @@ const port = process.env.PORT || 8000;
 
 const app = express();
 
+//Body Parser Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 // Setup static folder middleware
 // app.use(express.static(path.join(__dirname, "public")));
 // Replacement is Above
