@@ -1,6 +1,7 @@
 import express from "express";
 import path from "path";
 import posts from "./routes/posts.js";
+import logger from "./middleware/logger.js";
 const port = process.env.PORT || 8000;
 
 const app = express();
@@ -15,6 +16,9 @@ app.use(express.urlencoded({ extended: false }));
 // app.get("/about", (req, res) => {
 //   res.sendFile(path.join(__dirname, "public", "about.html"));
 // });
+
+// Logger middleware
+app.use(logger);
 
 //Routes
 app.use("/api/posts", posts);
